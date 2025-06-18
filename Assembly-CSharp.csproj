@@ -57,6 +57,7 @@
     <Compile Include="Assets\Objects\Payloads\Scripts\SimplePayload.cs" />
     <Compile Include="Assets\Scripts\InjectionInstaller.cs" />
     <Compile Include="Assets\Objects\ForkLift\Scripts\Panels\FuelStatus.cs" />
+    <Compile Include="Assets\InputSystem_Actions.cs" />
     <Compile Include="Assets\Objects\ForkLift\Scripts\ForkLift.cs" />
     <Compile Include="Assets\Objects\Payloads\Scripts\PayloadContainer.cs" />
     <Compile Include="Assets\Objects\Payloads\Base\LoadingArea\Scripts\LoadingArea.cs" />
