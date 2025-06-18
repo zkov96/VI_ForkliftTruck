@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.InputSystem;
+using Zenject;
 
 namespace ForkLift
 {
@@ -9,7 +10,7 @@ namespace ForkLift
         [SerializeField] private Transform _normalTransform;
         [SerializeField] private Transform _zoomTransform;
 
-        [SerializeField] private ForkliftConfig _config;
+        [Inject] private ForkliftConfig _config;
 
         private InputAction _cameraAction;
         private InputAction _cameraZoomAction;
@@ -21,6 +22,9 @@ namespace ForkLift
         {
             _cameraAction = InputSystem.actions.FindAction("Look");
             _cameraZoomAction = InputSystem.actions.FindAction("LookZoom");
+            
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
         }
 
         private void Update()

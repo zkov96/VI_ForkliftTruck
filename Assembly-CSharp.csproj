@@ -46,19 +46,26 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\6000.0.23f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.UIToolkit.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\LevelRestarter.cs" />
     <Compile Include="Assets\Objects\ForkLift\Scripts\Wheel.cs" />
     <Compile Include="Assets\Objects\ForkLift\Scripts\Fork.cs" />
     <Compile Include="Assets\Objects\ForkLift\Scripts\ControlWheel.cs" />
     <Compile Include="Assets\Objects\Payloads\Scripts\PayloadManager.cs" />
+    <Compile Include="Assets\Objects\ForkLift\Scripts\Panels\EngineStatus.cs" />
     <Compile Include="Assets\Objects\ForkLift\Scripts\ForkliftConfig.cs" />
     <Compile Include="Assets\Objects\Payloads\Pallete\Scripts\Pallete.cs" />
+    <Compile Include="Assets\Objects\Payloads\Scripts\SimplePayload.cs" />
     <Compile Include="Assets\Scripts\InjectionInstaller.cs" />
+    <Compile Include="Assets\Objects\ForkLift\Scripts\Panels\FuelStatus.cs" />
     <Compile Include="Assets\Objects\ForkLift\Scripts\ForkLift.cs" />
+    <Compile Include="Assets\Objects\Payloads\Scripts\PayloadContainer.cs" />
     <Compile Include="Assets\Objects\Payloads\Base\LoadingArea\Scripts\LoadingArea.cs" />
     <Compile Include="Assets\Objects\Payloads\Base\UnloadingArea\Scripts\UnloadingArea.cs" />
+    <Compile Include="Assets\Objects\ForkLift\Scripts\Panels\Panel.cs" />
     <Compile Include="Assets\Scripts\TransformUtils.cs" />
     <Compile Include="Assets\Objects\ForkLift\Scripts\CameraController.cs" />
     <Compile Include="Assets\Objects\Payloads\Scripts\Payload.cs" />
+    <Compile Include="Assets\Scripts\FadeScreen.cs" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile-2-Pass.shader" />

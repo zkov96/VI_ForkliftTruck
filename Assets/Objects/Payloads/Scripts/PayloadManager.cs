@@ -1,10 +1,12 @@
 ﻿using UnityEngine;
+using Zenject;
 using Object = UnityEngine.Object;
 
 namespace Payloads
 {
     public class PayloadManager
     {
+        [Inject] private DiContainer _diContainer;
         private Transform _payloadLifetimeHeap;
         private Transform _payloadHeap;
 
@@ -17,7 +19,7 @@ namespace Payloads
         public T AllocatePayload<T>(T prefab)
             where T : Payload
         {
-            return Object.Instantiate(prefab, _payloadLifetimeHeap);
+            return _diContainer.InstantiatePrefabForComponent<T>(prefab, _payloadLifetimeHeap);
         }
 
         public void DestroyPayload(Payload payload)
@@ -26,9 +28,10 @@ namespace Payloads
             payload.transform.SetParent(_payloadHeap);
         }
 
-        public void CapturePayload(Payload payload, Transform parentPivot, bool worldPositionStays = true)
+        public Payload CapturePayload(Payload payload, Transform parentPivot, bool worldPositionStays = true)
         {
             payload.transform.SetParent(parentPivot, worldPositionStays);
+            return payload;
         }
 
         public void FreePayload(Payload payload)

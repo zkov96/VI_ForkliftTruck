@@ -1,5 +1,7 @@
-﻿using UnityEngine;
+﻿using ForkLift.Panels;
+using UnityEngine;
 using UnityEngine.InputSystem;
+using Zenject;
 
 namespace ForkLift
 {
@@ -11,7 +13,10 @@ namespace ForkLift
 
         [SerializeField] private Fork _fork;
 
-        [SerializeField] private ForkliftConfig _config;
+        [SerializeField] private StatusPanel statusPanel;
+
+
+        [Inject] private ForkliftConfig _config;
 
         private float _wheelTorque;
 
@@ -27,6 +32,8 @@ namespace ForkLift
         /// 0-1
         /// </summary>
         private float _fuel;
+        public float Fuel => _fuel;
+
         private float _fuelConsumption;
 
         private void Awake()
@@ -60,7 +67,7 @@ namespace ForkLift
             {
                 _isEngineButtonPressed = false;
             }
-            
+
             if (_isEngineStarted)
             {
                 var gasDirection = _gasAction.ReadValue<float>();
@@ -73,12 +80,13 @@ namespace ForkLift
                 // float currentMotorTorque = Mathf.Lerp(-_wheelTorque, _wheelTorque, speedFactor);
                 foreach (var wheel in _wheels)
                 {
-                    wheel.MotorTorque = _wheelTorque * gasDirection * _config.SpeedByFuelPercentageCurve.Evaluate(_fuel);
+                    wheel.MotorTorque =
+                        _wheelTorque * gasDirection * _config.SpeedByFuelPercentageCurve.Evaluate(_fuel);
                     wheel.BrakeTorque = isBrake ? _config.WheelBrakeTorque : 0;
                 }
 
-                _fork.Speed = _config.ForkSpeed * forkDirection;
-                
+                _fork.Speed = _config.ForkSpeed * forkDirection * _config.SpeedByFuelPercentageCurve.Evaluate(_fuel);
+
                 _fuel -= _fuelConsumption * Time.deltaTime;
             }
             else
@@ -88,29 +96,24 @@ namespace ForkLift
                     wheel.MotorTorque = 0;
                     wheel.BrakeTorque = _config.WheelBrakeTorque;
                 }
+
+                _fork.Speed = 0;
             }
-            
+
             var rotateDirection = -_rotateAction.ReadValue<float>();
             foreach (var controlWheel in _controlWheels)
             {
                 controlWheel.RotationSpeed = _config.RotateSpeed * rotateDirection;
             }
-            
+
             if (_fuel <= 0)
             {
                 _fuel = 0;
                 _isEngineStarted = false;
             }
-        }
 
-        private void OnGUI()
-        {
-            foreach (var wheel in _wheels)
-            {
-                GUILayout.Box($"{wheel.name}: M={wheel.MotorTorque} B={wheel.BrakeTorque}");
-            }
-
-            GUILayout.Box($"_fork.Speed = {_fork.Speed}");
+            statusPanel.EngineStatus.IsOn = _isEngineStarted;
+            statusPanel.FuelStatus.Fuel = _fuel;
         }
     }
 }

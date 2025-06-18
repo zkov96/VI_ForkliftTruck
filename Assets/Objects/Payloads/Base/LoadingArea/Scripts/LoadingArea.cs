@@ -7,7 +7,7 @@ namespace Payloads.Base.LoadingArea
     public class LoadingArea : MonoBehaviour
     {
         private static readonly int Play_AK = Animator.StringToHash("Play");
-        
+
         [Inject] private PayloadManager _payloadManager { get; set; }
 
 
@@ -18,8 +18,8 @@ namespace Payloads.Base.LoadingArea
         [SerializeField] private Animator _animator;
 
         private float _lastCollisionTime;
-        private Payload _capturedPayload;
-        
+        protected Payload _capturedPayload;
+
 
         private void Start()
         {
@@ -48,7 +48,10 @@ namespace Payloads.Base.LoadingArea
         private void OnSpawnAnimationStart()
         {
             _capturedPayload = _payloadManager.AllocatePayload(_payloadPrefab);
-            _payloadManager.CapturePayload(_capturedPayload, _spawnPivot, false);
+            _payloadManager.CapturePayload(_capturedPayload, _spawnPivot, true);
+            
+            _capturedPayload.transform.localPosition = Vector3.zero;
+            _capturedPayload.transform.localRotation = Quaternion.Euler(Vector3.zero);
 
             _capturedPayload.IsManualControl = true;
         }
@@ -58,6 +61,11 @@ namespace Payloads.Base.LoadingArea
             if (_capturedPayload != null)
             {
                 _capturedPayload.IsManualControl = false;
+                if (_capturedPayload is PayloadContainer payloadContainer)
+                {
+                    payloadContainer.FreeInnerPayload();
+                }
+
                 _payloadManager.FreePayload(_capturedPayload);
                 _capturedPayload = null;
             }
