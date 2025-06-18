@@ -7,12 +7,20 @@ namespace ForkLift
     {
         public float WheelMotorTorque;
         public float WheelBrakeTorque;
-        public float MaxSpeed;
 
         public float RotateSpeed;
         public float ReviveRotateSpeed;
         
-        public float MovingSpeed;
         public float ForkSpeed;
+
+        public float FuelConsumption;
+        public float FuelCapacity;
+        public AnimationCurve SpeedByFuelPercentageCurve;
+
+        public Vector2 CameraRotationSpeed;
+        public Vector2 CameraHorizontalMinMax;
+        public Vector2 CameraVerticalMinMax;
+        public float CameraSmoothness;
+        public float CameraZoomSpeed;
     }
 }

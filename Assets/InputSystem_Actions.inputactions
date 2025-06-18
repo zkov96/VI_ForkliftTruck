@@ -1030,6 +1030,24 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "Engine",
+                    "type": "Button",
+                    "id": "8121b705-e511-4c79-b499-5fa395a8750f",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "LookZoom",
+                    "type": "Button",
+                    "id": "9c643972-9782-47ff-ab4d-57c8b0e9090e",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -1142,6 +1160,28 @@
                     "action": "Fork",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "f5dee83b-69c1-4992-907c-af5df85d5acf",
+                    "path": "<Keyboard>/t",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Engine",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ad932b46-1a12-423a-b5c6-70e666362a2d",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LookZoom",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }

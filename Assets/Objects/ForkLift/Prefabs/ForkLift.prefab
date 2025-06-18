@@ -634,13 +634,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2531605921452371484}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.07401012, y: -0, z: -0, w: 0.99725753}
-  m_LocalPosition: {x: 0, y: 0.903, z: -0.168}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1813526700446653150}
-  m_LocalEulerAnglesHint: {x: 8.489, y: 0, z: 0}
+  m_Father: {fileID: 3328189473579535380}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &5999119984983700205
 Camera:
   m_ObjectHideFlags: 0
@@ -1157,6 +1157,37 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &4311068525761944057
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1827799245578704846}
+  m_Layer: 0
+  m_Name: ZoomCameraPivot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1827799245578704846
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4311068525761944057}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.2695711, y: -0, z: -0, w: 0.96298057}
+  m_LocalPosition: {x: 0, y: 0.903, z: 0.537}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1813526700446653150}
+  m_LocalEulerAnglesHint: {x: 31.278, y: 0, z: 0}
 --- !u!1 &4339078771687666638
 GameObject:
   m_ObjectHideFlags: 0
@@ -1418,6 +1449,38 @@ Transform:
   m_Children:
   - {fileID: 7924508653064256072}
   - {fileID: 460422789583913156}
+  m_Father: {fileID: 1813526700446653150}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6017148200290088833
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3328189473579535380}
+  m_Layer: 0
+  m_Name: NormalCameraPivot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3328189473579535380
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6017148200290088833}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.903, z: -0.168}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2188632541571967617}
   m_Father: {fileID: 1813526700446653150}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6971887297679263072
@@ -1820,6 +1883,7 @@ GameObject:
   - component: {fileID: 1813526700446653150}
   - component: {fileID: 8143543709475428383}
   - component: {fileID: 5676071991758987147}
+  - component: {fileID: 747674224430289380}
   m_Layer: 0
   m_Name: ForkLift
   m_TagString: Untagged
@@ -1840,7 +1904,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2188632541571967617}
+  - {fileID: 3328189473579535380}
+  - {fileID: 1827799245578704846}
   - {fileID: 9153843800854138589}
   - {fileID: 66683679330730199}
   - {fileID: 446772219448292246}
@@ -1860,7 +1925,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88f328967b204ecdb7334b74d5a68253, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cameraTransform: {fileID: 2188632541571967617}
   _wheels:
   - {fileID: 8344226720683327724}
   - {fileID: 3597687173603220466}
@@ -1898,6 +1962,22 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
+--- !u!114 &747674224430289380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8538462303806187355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c8d54c4c3274e7d888e7526fc597f74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _cameraTransform: {fileID: 2188632541571967617}
+  _normalTransform: {fileID: 3328189473579535380}
+  _zoomTransform: {fileID: 1827799245578704846}
+  _config: {fileID: 11400000, guid: 14980a2c242e67943b4e15936ca9c404, type: 2}
 --- !u!1 &8784964901284167815
 GameObject:
   m_ObjectHideFlags: 0
