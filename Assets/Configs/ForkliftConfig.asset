@@ -17,7 +17,7 @@ MonoBehaviour:
   RotateSpeed: 30
   ReviveRotateSpeed: 20
   ForkSpeed: 0.1
-  FuelConsumption: 10
+  FuelConsumption: 0.1
   FuelCapacity: 100
   SpeedByFuelPercentageCurve:
     serializedVersion: 2
