@@ -14,12 +14,13 @@ namespace Payloads
         [Inject] protected PayloadManager _payloadManager { get; set; }
 
         protected Payload[] _capturedPayloads = Array.Empty<Payload>();
-        
+
         public override bool IsManualControl
         {
             get => base.IsManualControl;
             set
             {
+                base.IsManualControl = value;
                 foreach (var capturedPayload in _capturedPayloads)
                 {
                     capturedPayload.IsManualControl = value;

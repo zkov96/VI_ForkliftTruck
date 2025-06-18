@@ -17,8 +17,8 @@ MonoBehaviour:
   RotateSpeed: 30
   ReviveRotateSpeed: 20
   ForkSpeed: 0.1
-  FuelConsumption: 0.1
-  FuelCapacity: 100
+  FuelConsumption: 1
+  FuelCapacity: 300
   SpeedByFuelPercentageCurve:
     serializedVersion: 2
     m_Curve:
@@ -61,7 +61,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  CameraRotationSpeed: {x: 10, y: 10}
+  CameraRotationSpeed: {x: 20, y: 20}
   CameraHorizontalMinMax: {x: -70, y: 70}
   CameraVerticalMinMax: {x: -35, y: 40}
   CameraSmoothness: 0.7

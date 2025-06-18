@@ -24,8 +24,9 @@ namespace Payloads
 
         public void DestroyPayload(Payload payload)
         {
-            payload.gameObject.SetActive(false);
-            payload.transform.SetParent(_payloadHeap);
+            // payload.gameObject.SetActive(false);
+            // payload.transform.SetParent(_payloadHeap);
+            Object.Destroy(payload.gameObject);
         }
 
         public Payload CapturePayload(Payload payload, Transform parentPivot, bool worldPositionStays = true)
