@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Objects.Payloads
+namespace Payloads
 {
     [RequireComponent(typeof(BoxCollider))]
     public class Payload : MonoBehaviour

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using Object = UnityEngine.Object;
 
-namespace Objects.Payloads
+namespace Payloads
 {
     public class PayloadManager
     {

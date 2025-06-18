@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace Forklift
+namespace ForkLift
 {
     [RequireComponent(typeof(Rigidbody))]
     public class ForkLift : MonoBehaviour

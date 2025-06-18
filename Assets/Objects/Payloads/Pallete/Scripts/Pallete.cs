@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Objects.Payloads.Pallete.Scripts
+namespace Payloads.Pallete.Scripts
 {
     public class Pallete : Payload
     {

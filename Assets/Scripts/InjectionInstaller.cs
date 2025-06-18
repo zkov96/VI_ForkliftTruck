@@ -1,4 +1,4 @@
-﻿using Objects.Payloads;
+﻿using Payloads;
 using Zenject;
 
 public class InjectionInstaller : MonoInstaller

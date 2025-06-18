@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Forklift
+namespace ForkLift
 {
     // [RequireComponent(typeof(WheelCollider))]
     public class Wheel : MonoBehaviour

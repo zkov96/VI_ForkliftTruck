@@ -1,10 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
 using Zenject;
 
-namespace Objects.Payloads.Base.UnloadingArea
+namespace Payloads.Base.UnloadingArea
 {
     [RequireComponent(typeof(BoxCollider))]
     public class UnloadingArea : MonoBehaviour

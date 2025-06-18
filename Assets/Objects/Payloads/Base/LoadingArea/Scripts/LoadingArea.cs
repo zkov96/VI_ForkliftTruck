@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using Zenject;
 
-namespace Objects.Payloads.Base.LoadingArea
+namespace Payloads.Base.LoadingArea
 {
     [RequireComponent(typeof(BoxCollider))]
     public class LoadingArea : MonoBehaviour

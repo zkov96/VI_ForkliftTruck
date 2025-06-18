@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Forklift
+namespace ForkLift
 {
     [CreateAssetMenu(menuName = "Configs/Forklift")]
     public class ForkliftConfig : ScriptableObject
